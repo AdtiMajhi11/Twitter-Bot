@@ -1,5 +1,7 @@
 import tweepy
-from Tkinter import *
+import tkinter as tk 
+from tkinter import *
+
 
 consumer_key = 'consumer key'
 consumer_secret = 'consumer secrets'
@@ -10,7 +12,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-user = api.me()
+user = api.verify_credentials()
 print(user.name)
 print(user.location)
 
